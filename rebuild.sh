@@ -1,9 +1,8 @@
 
 cd ~/nix-config/
-nix flake update
 if sudo nixos-rebuild switch --impure --flake .
 then
 git add .
-git commit -m "A new update"
+git commit -m "A new config"
 git push origin
 fi

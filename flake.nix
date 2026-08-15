@@ -10,11 +10,16 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+     };
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
     
-  };
 };
 
-  outputs = { self, nixpkgs , home-manager , ... } @ inputs:
+  outputs = { self, nixpkgs , home-manager , plasma-manager , ... } @ inputs:
   
 {
   nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -29,6 +34,7 @@
                useUserPackages = true;
                users.matteo = import ./home.nix;
                backupFileExtension = "backup";
+               sharedModules = [ plasma-manager.homeModules.plasma-manager ];
              };
           }
       ];

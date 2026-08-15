@@ -11,7 +11,7 @@ programs.bash = {
   enable=true;
   shellAliases = {
      update = "bash ~/nix-config/update.sh";
-     rebuild = "sudo nixos-rebuild switch --impure --flake .";
+     rebuild = "bash ~/nix-config/rebuild.sh";
    };
   };
 }
