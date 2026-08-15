@@ -10,7 +10,7 @@ home= {
 programs.bash = {
   enable=true;
   shellAliases = {
-     update = " cd ~/nix-config && nix flake update && sudo nixos-rebuild switch --impure --flake .";
+     update = "bash ~/nix-config/update.sh";
      rebuild = "sudo nixos-rebuild switch --impure --flake .";
    };
   };
