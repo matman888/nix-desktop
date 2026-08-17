@@ -14,4 +14,9 @@ programs.bash = {
      rebuild = "bash ~/nix-config/rebuild.sh";
    };
   };
+programs.plasma = {
+  workspace = {
+     lookAndFeel = "org.kde.breezedark.desktop";
+   };
+ };
 }
