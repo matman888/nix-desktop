@@ -160,11 +160,7 @@ inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
   # Enable flakes
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  # Enable Nvidia drivers
 
-hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;  # see the note above
 # Install container manager
 virtualisation.docker = {
   enable = true;
