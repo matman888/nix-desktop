@@ -22,7 +22,7 @@
   outputs = { self, nixpkgs , home-manager , plasma-manager , ... } @ inputs:
   
 {
-  nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+  nixosConfigurations.workstation = nixpkgs.lib.nixosSystem {
      specialArgs ={ inherit inputs; };
      system ="x86_64-linux";
         modules = [
@@ -56,5 +56,23 @@
           }
       ];
     };
+nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+     specialArgs ={ inherit inputs; };
+     system ="x86_64-linux";
+        modules = [
+	  ./configuration.nix
+                    home-manager.nixosModules.home-manager
+             {
+             home-manager = {
+               useGlobalPkgs = true;
+               useUserPackages = true;
+               users.matteo = import ./home.nix;
+               backupFileExtension = "backup";
+               sharedModules = [ plasma-manager.homeModules.plasma-manager ];
+             };
+          }
+      ];
+    };
+
   };
 }

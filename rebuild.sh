@@ -1,6 +1,6 @@
 
 cd ~/nix-config/
-if sudo nixos-rebuild switch --impure --flake .
+if sudo nixos-rebuild switch --impure --flake .#$(< env)
 then
 git add .
 git commit -m "A new config"
