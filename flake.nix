@@ -27,23 +27,9 @@
      system ="x86_64-linux";
         modules = [
 	  ./configuration.nix
-          (
-          { config, lib, pkgs, inputs, ... }:
-          {
-            hardware.graphics.enable = true;
-            services.xserver.videoDrivers = [ "nvidia" ];
-            hardware.nvidia.open = true;  # see the note above
-            services.displayManager = {
-                       autoLogin = {
-                         enable=true;
-                         user= "matteo";
-               };
-             };
+          ./desktop.nix
+          ./hw-desktop.nix
 
-
-          }
-
-          )
           home-manager.nixosModules.home-manager
            {
              home-manager = {
