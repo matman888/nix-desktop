@@ -9,6 +9,7 @@
        user= "matteo";
     };
  };
+     boot.loader.systemd-boot.enable = true;
 
 
 }

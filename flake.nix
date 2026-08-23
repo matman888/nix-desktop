@@ -16,10 +16,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v1.1.0";
+
+      # Optional but recommended to limit the size of your system closure.
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     
 };
 
-  outputs = { self, nixpkgs , home-manager , plasma-manager , ... } @ inputs:
+  outputs = { self, nixpkgs , home-manager , plasma-manager , lanzaboote, ... } @ inputs:
   
 {
   nixosConfigurations.workstation = nixpkgs.lib.nixosSystem {
@@ -48,6 +54,8 @@ nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         modules = [
 	  ./configuration.nix
           ./hw-laptop.nix
+          ./laptop.nix
+          lanzaboote.nixosModules.lanzaboote
                     home-manager.nixosModules.home-manager
              {
              home-manager = {
