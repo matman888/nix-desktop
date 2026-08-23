@@ -11,7 +11,7 @@ boot.lanzaboote = {
   autoEnrollKeys.enable = true;
   measuredBoot = {
      enable = true;
-     pcrs = [ 0 4 7 ];
+     pcrs = [ 0 1 4 7 ];
    };
  };
 boot.initrd.systemd.enable = true;
