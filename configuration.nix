@@ -104,6 +104,7 @@ lftp
 mkvtoolnix
 gcc
 gnumake
+mpv
 inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 ];
 
