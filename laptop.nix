@@ -9,10 +9,6 @@ boot.lanzaboote = {
   pkiBundle = "/var/lib/sbctl";
   autoGenerateKeys.enable = true;
   autoEnrollKeys.enable = true;
-  measuredBoot = {
-     enable = true;
-     pcrs = [ 0 1 2 3 4 7 ];
-   };
  };
 boot.initrd.systemd.enable = true;
 }
