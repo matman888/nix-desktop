@@ -105,6 +105,7 @@ mkvtoolnix
 gcc
 gnumake
 mpv
+qbittorrent
 inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 ];
 
