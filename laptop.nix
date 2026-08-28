@@ -11,6 +11,7 @@ boot.lanzaboote = {
   autoEnrollKeys = {
       includeMicrosoftKeys = false;
       allowBrickingMyMachine = true;
+      enable = true;
     };
   measuredBoot = {
      enable = true;
