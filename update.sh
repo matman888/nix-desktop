@@ -1,5 +1,6 @@
 
 cd ~/nix-config/
+git pull
 nix flake update
 if sudo nixos-rebuild switch --flake .#$(< env)
 then
