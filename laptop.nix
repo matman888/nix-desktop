@@ -2,6 +2,7 @@
 {
 environment.systemPackages= [
 pkgs.sbctl
+pkgs.koreader
 ];
 boot.lanzaboote = {
   enable=true;
