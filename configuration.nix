@@ -131,6 +131,7 @@ nix.gc = {
    dates = "weekly";
    options = "--delete-older-than 10d";
   };
+nix.settings.auto-optimise-store = true;
 
 
 }
