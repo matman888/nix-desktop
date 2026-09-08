@@ -123,7 +123,6 @@ virtualisation.docker = {
 
 programs.localsend = {
   enable =true;
-  openFirewall = true;
   };
 
 nix.gc = {
@@ -132,6 +131,6 @@ nix.gc = {
    options = "--delete-older-than 10d";
   };
 nix.settings.auto-optimise-store = true;
-
+networking.firewall.enable = false;
 
 }
