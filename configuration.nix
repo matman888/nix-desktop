@@ -106,6 +106,10 @@ gcc
 gnumake
 mpv
 qbittorrent
+gcc
+cmake
+gdb
+vscode
 inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 ];
 
