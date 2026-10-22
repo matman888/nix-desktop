@@ -55,8 +55,7 @@
     variant = "";
   };
 
-virtualisation.virtualbox.host.enable = true;
-users.extraGroups.vboxusers.members = [ "matteo" ];
+
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
