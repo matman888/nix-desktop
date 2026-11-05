@@ -76,7 +76,7 @@
   users.users."matteo" = {
     isNormalUser = true;
     description = "matteo";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
     packages = with pkgs; [
       kdePackages.kate
     #  thunderbird
@@ -109,6 +109,7 @@ gcc
 cmake
 gdb
 vscode
+dnsmasq
 inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 ];
 
@@ -135,5 +136,7 @@ nix.gc = {
   };
 nix.settings.auto-optimise-store = true;
 networking.firewall.enable = false;
+virtualisation.libvirtd.enable = true;
+programs.virt-manager.enable = true;
 
 }
