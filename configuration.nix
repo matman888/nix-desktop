@@ -110,6 +110,7 @@ cmake
 gdb
 vscode
 dnsmasq
+onlyoffice-desktopeditors
 inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
 ];
 
